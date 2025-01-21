@@ -64,14 +64,14 @@
 
 - Branching Entropy(BE) : 단어 내부에서는 불확실성과 엔트로피가 줄어들고 단어 경계에서는 증가하는 현상을 모델링 	한 것으로 엔트로피가 높을수록 형태소일 확률이 크므로 BE가 높은 문자열을 단어 취급한다.(주로 중국어 자연어 처리에 사용)
 
-<img src="./img/Branching Entropy.png" width="600px" height="300px" title="Branching Entropy2"/>
+<p align="center"><img src="./img/Branching Entropy.png" width="600px" height="300px" title="Branching Entropy"/></p>
 
-<p align="center"><img src="http://192.168.0.200:9000/files/22" width="600px" height="300px" title="Branching Entropy2"/></p>
+<p align="center"><img src="./img/BE_2.png" width="600px" height="300px" title="Branching Entropy2"/></p>
 
 
 - Accessor Variety : branching entropy의 추상적인 값 , conditional random field의 potential function을 구성하는데 편리하다.
 
-<p align="center"><img src="http://192.168.0.200:9000/files/23" width="500px" height="80px" title="Accessor Variety"/></p>
+<p align="center"><img src="./img/AV.png" width="500px" height="80px" title="Accessor Variety"/></p>
 
 	> Potential function은 categorical value를 포함하여 sequence로 입력된 다양한 형태의 값을 벡터로 변환하며, Boolean필터 처럼 작동하고,
 
@@ -168,13 +168,13 @@
 
 		- LREvaluator() 와 LRTemplateMatcher()를 이용하여 Tagger 생성.
 		- UnknowLRPostprocessor()를 사용하여 사전 매칭이 되지 않는 단어들도 출력되게 합니다.(tag = None)
-<p align="center"><img src="http://192.168.0.200:9000/files/25" width="500px" height="150px" title="pos"/></p>
+<p align="center"><img src="./img/pos_test.png" width="500px" height="150px" title="pos"/></p>
 
 		- debug=True 옵션을 통해 SimpleTagger().tag() 를 실행할 때, 문장내의 단어열 뿐 아니라 디버깅용 LR 후보 리스트들이 출력.
-<p align="center"><img src="http://192.168.0.200:9000/files/26" width="500px" height="300px" title="pos_debug"/></p>
+<p align="center"><img src="./img/pos_tag_debug.png" width="500px" height="300px" title="pos_debug"/></p>
 
 		- LREvaluator()의 파라미터 preference를 통해 특정 품사의 단어에 대해 점수의 가중치를 더해줄 수 있다.
-<p align="center"><img src="http://192.168.0.200:9000/files/29" width="500px" height="100px" title="pos_weight"/></p>
+<p align="center"><img src="./img/pos_weight.png" width="500px" height="100px" title="pos_weight"/></p>
 
 ### 5. Vectorizer
 - 토크나이저를 학습하거나, 학습된 토크나이저를 이용하여 문서를 sparse matrix (행렬의 대부분의 값이 0인 행렬) 로 만든다.
@@ -222,13 +222,13 @@
 - 서로 상관이 없는 경우 0이며, 그 값이 클수록 positive correlated 이다.
 - 음의 값을 갖는 경우 0으로 치환.
 - 주로 연관 분석에 사용된다.
-<p align="center"><img src="http://192.168.0.200:9000/files/32" width="800px" height="300px" title="pmi"/></p>
+<p align="center"><img src="./img/pmi.png" width="800px" height="300px" title="pmi"/></p>
 
 - pmi_test.py
 
 	* sent_to_word_contexts_matrix : (word, context words) matrix 를 만들 수 있다. (in vectorizer)
 
-<p align="center"><img src="http://192.168.0.200:9000/files/30" width="500px" height="150px" title="sent_contexts_matrix"/></p>
+<p align="center"><img src="./img/sent_contexts_matrix.png" width="500px" height="150px" title="sent_contexts_matrix"/></p>
 
 	x : scipy.sparse.csr_matrix 이며 (n_vocabs, n_vocabs) 크기이고, idx2vocab는 x의 각 row, column 에 해당 하는 단어가 포함된 list of str = Co-occurrence matrix
 
@@ -241,7 +241,7 @@
 	- Function:
 		- pmi_func : x의 (rows, columns)에 대한 pmi를 계산 (row=x, column=y)
 
-<p align="center"><img src="http://192.168.0.200:9000/files/31" width="500px" height="150px" title="pmi_func"/></p>
+<p align="center"><img src="./img/pmi_func.png" width="500px" height="150px" title="pmi_func"/></p>
 
 			min_pmi : default=0, min_pmi 이상 값만 저장.
 			alpha : default=0, smoothing factor. pmi(x,y; alpha) = p_xy /(p_x * (p_y + alpha))
