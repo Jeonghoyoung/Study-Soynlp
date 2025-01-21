@@ -64,8 +64,7 @@
 
 - Branching Entropy(BE) : 단어 내부에서는 불확실성과 엔트로피가 줄어들고 단어 경계에서는 증가하는 현상을 모델링 	한 것으로 엔트로피가 높을수록 형태소일 확률이 크므로 BE가 높은 문자열을 단어 취급한다.(주로 중국어 자연어 처리에 사용)
 
-![Branching Entropy](./img/Branching Entropy.png)
-
+<img src="./img/Branching Entropy.png" width="600px" height="300px" title="Branching Entropy2"/>
 
 <p align="center"><img src="http://192.168.0.200:9000/files/22" width="600px" height="300px" title="Branching Entropy2"/></p>
 
