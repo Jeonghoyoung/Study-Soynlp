@@ -81,7 +81,7 @@
 
 - Cohesion Score : 단어를 구성하는 글자들이 얼마나 함께 자주 등장하는지의 정보로 단어의 경계를 판단하는 방법 (interior boundary scoring)
 
-<p align="center"><img src="http://192.168.0.200:9000/files/24" width="500px" height="200px" title="CS"/></p>
+<p align="center"><img src="./img/CS.png" width="500px" height="200px" title="CS"/></p>
 
 	* Parameters:
 		- max_left_length : default=10, L의 최대 길이
